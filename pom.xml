@@ -20,6 +20,7 @@
 		<module>ribbon-service</module>
 		<module>hystrix-service</module>
 		<module>hystrix-dashborad-service</module>
+		<module>feign-service</module>
 	</modules>
 	<properties>
 		<java.version>1.8</java.version>
@@ -43,6 +44,10 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
