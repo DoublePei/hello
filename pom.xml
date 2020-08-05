@@ -21,6 +21,7 @@
 		<module>hystrix-service</module>
 		<module>hystrix-dashborad-service</module>
 		<module>feign-service</module>
+		<module>zuul-service</module>
 	</modules>
 	<properties>
 		<java.version>1.8</java.version>
