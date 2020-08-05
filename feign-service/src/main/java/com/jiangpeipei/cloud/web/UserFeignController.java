@@ -6,7 +6,8 @@ import com.jiangpeipei.cloud.imp.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@RestController ("/user")
+@RestController
+@RequestMapping("/user")
 public class UserFeignController {
 
     @Autowired
