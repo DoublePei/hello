@@ -2,6 +2,7 @@ package com.jiangpeipei.cloud.web;
 
 import com.jiangpeipei.cloud.entity.CommonResult;
 import com.jiangpeipei.cloud.entity.User;
+import com.jiangpeipei.cloud.imp.HelloFeignService;
 import com.jiangpeipei.cloud.imp.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,10 @@ public class UserFeignController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private HelloFeignService helloFeignService;
+
     @GetMapping ("/{id}")
     public CommonResult getUser(@PathVariable Long id) {
         return userService.getUser(id);
@@ -35,5 +40,11 @@ public class UserFeignController {
     @PostMapping("/delete/{id}")
     public CommonResult delete(@PathVariable Long id) {
         return userService.delete(id);
+    }
+
+    @GetMapping("/search/github")
+    public String search(@RequestParam  String query) {
+        System.out.println("haha");
+        return helloFeignService.searchRepo(query);
     }
 }

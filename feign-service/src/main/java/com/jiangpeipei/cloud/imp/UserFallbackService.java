@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * 指定降级类，而不是出错 导致后续服务不可用
  */
 @Component
-public class UserFallbackService implements UserService {
+public class UserFallbackService implements UserService ,HelloFeignService{
 
     @Override
     public CommonResult create(User user) {
@@ -36,5 +36,10 @@ public class UserFallbackService implements UserService {
     @Override
     public CommonResult delete(Long id) {
         return new CommonResult("调用失败，服务被降级", 500);
+    }
+
+    @Override
+    public String searchRepo(String q) {
+        return "不知道为啥";
     }
 }
