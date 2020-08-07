@@ -44,7 +44,7 @@ public class UserFeignController {
 
     @GetMapping("/search/github")
     public String search(@RequestParam  String query) {
-        System.out.println("haha");
+
         return helloFeignService.searchRepo(query);
     }
 }
