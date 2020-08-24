@@ -5,6 +5,7 @@ import com.jiangpeipei.cloud.entity.User;
 import com.jiangpeipei.cloud.imp.HelloFeignService;
 import com.jiangpeipei.cloud.imp.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -43,7 +44,7 @@ public class UserFeignController {
     }
 
     @GetMapping("/search/github")
-    public String search(@RequestParam  String query) {
+    public ResponseEntity<byte[]> search(@RequestParam  String query) {
 
         return helloFeignService.searchRepo(query);
     }

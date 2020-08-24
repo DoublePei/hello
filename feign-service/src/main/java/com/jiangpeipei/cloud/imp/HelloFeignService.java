@@ -2,6 +2,7 @@ package com.jiangpeipei.cloud.imp;
 
 import com.jiangpeipei.cloud.config.FeignConfig;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -9,5 +10,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface HelloFeignService {
 
     @GetMapping("/search/repositories")
-    String searchRepo(@RequestParam("q") String q);
+    ResponseEntity<byte[]> searchRepo(@RequestParam("q") String q);
 }

@@ -2,6 +2,7 @@ package com.jiangpeipei.cloud.imp;
 
 import com.jiangpeipei.cloud.entity.CommonResult;
 import com.jiangpeipei.cloud.entity.User;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 /**
@@ -39,7 +40,7 @@ public class UserFallbackService implements UserService ,HelloFeignService{
     }
 
     @Override
-    public String searchRepo(String q) {
-        return "不知道为啥";
+    public ResponseEntity<byte[]> searchRepo(String q) {
+        return null;
     }
 }
